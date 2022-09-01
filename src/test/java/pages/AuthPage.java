@@ -2,13 +2,6 @@ package pages;
 
 import com.codeborne.selenide.Condition;
 import io.qameta.allure.Step;
-import io.restassured.RestAssured;
-import org.apiguardian.api.API;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.Test;
-import tests.TestBase;
 
 import static com.codeborne.selenide.Selenide.*;
 import static io.restassured.RestAssured.given;
@@ -20,9 +13,9 @@ public class AuthPage {
     DataTestPage data = new DataTestPage();
 
     @Step("Open base url Drom")
-    public AuthPage openPage() {
+    public AuthPage openPageDrom() {
         open("https://www.drom.ru/");
-        return null;
+        return this;
     }
 
     @Step("User authorization")
@@ -32,7 +25,7 @@ public class AuthPage {
         $("#password").setValue(data.password());
         $("#signbutton").submit();
 //        sleep(5000);
-        return null;
+        return this;
     }
     @Step("authorization verification")
     public AuthPage assertAuthUI() {

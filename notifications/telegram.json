@@ -1,0 +1,17 @@
+{
+  "base": {
+    "project": "testSberTech",
+    "environment": "preProd",
+    "comment": "Tag:'job_search' + 'viewing_commands' + 'viewing_programs' + 'application'",
+    "reportLink": "",
+    "language": "en",
+    "messenger": "telegram",
+    "allureFolder": "build/allure-report/",
+    "enableChart": true
+  },
+  "telegram": {
+    "token": "5527425662:AAEnzID0U0k5mY3f5JJGW5I4wS091Z5GALs",
+    "chat": "-1001738303118",
+    "replyTo": ""
+  }
+}
