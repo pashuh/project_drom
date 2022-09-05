@@ -5,19 +5,19 @@ import com.codeborne.selenide.Selenide;
 import drivers.BrowserstackMobileDriver;
 import drivers.LocalMobileDriver;
 import drivers.RealDriver;
-import helpers.Attach;
+import helpers.AttachForMobile;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 
+
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
-import static helpers.Attach.getSessionId;
 import static io.qameta.allure.Allure.step;
+import static helpers.AttachForMobile.sessionId;
 
-
-public class TestBaseForMobile {
+public class TestBaseMobile {
     static String deviceHost = System.getProperty("deviceHost", "local");
 
     @BeforeAll
@@ -40,19 +40,19 @@ public class TestBaseForMobile {
     @BeforeEach
     public void startDriver() {
         addListener("AllureSelenide", new AllureSelenide());
-
         open();
     }
 
     @AfterEach
     public void afterEach() {
-        String sessionId = getSessionId();
-        Attach.screenshotAs("Last screenshot");
-        Attach.pageSource();
-        if (deviceHost.equals("browserstack")) {
-            Attach.video(sessionId);
-            step("Close driver", Selenide::closeWebDriver);
+        String sessionId = sessionId();
 
+        AttachForMobile.screenshotAs("Last screenshot");
+        AttachForMobile.pageSource();
+        step("Close driver", Selenide::closeWebDriver);
+
+        if (deviceHost.equals("browserstack")) {
+            AttachForMobile.video(sessionId);
         }
     }
 }

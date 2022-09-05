@@ -3,16 +3,16 @@ package pages;
 import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.Condition;
 import io.qameta.allure.Step;
-import org.junit.jupiter.api.Assertions;
 
 import static com.codeborne.selenide.Selenide.*;
 
 public class CatalogPage {
     @Step("Open catalog")
     public CatalogPage openCatalog() {
-        open("https://www.drom.ru/catalog/");
+        open("/catalog/");
         return this;
     }
+
     @Step("Open the catalog auto")
     public CatalogPage openAutoTheCatalog(String brand) {
         $$(".css-1q66we5.e4ojbx43").findBy(Condition.text(brand))
@@ -27,9 +27,9 @@ public class CatalogPage {
         return this;
     }
 
-    @Step("Open the catalog Kia")
-    public CatalogPage openKiaTheCatalog() {
-        $$(".css-1q66we5.e4ojbx43").findBy(Condition.text("Kia"))
+    @Step("Open the catalog '...'")
+    public CatalogPage openTheCatalogBrandAuto(String brand) {
+        $$(".css-1q66we5.e4ojbx43").findBy(Condition.text(brand))
                 .click();
         return this;
     }

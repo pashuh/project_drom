@@ -4,32 +4,33 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
+@DisplayName("Submit an ad tests")
 public class SubmitAnAdTests extends TestBase {
 
     @Test
     @DisplayName("A message about the absence of a number")
-    @Tag("UI")
+    @Tag("ui")
     void notMobile() {
-        searchPage.openPageDrom();
+        searchPage.openPage();
         submitAnAdPage.openAnAd()
-                .setVIN(dataTestPage.vin())
+                .setVIN(dataTest.vin)
                 .submit()
-                .setMileage(dataTestPage.mileage())
-                .setPrice(dataTestPage.price())
+                .setMileage(dataTest.mileage)
+                .setPrice(dataTest.price)
                 .clickSubmit()
                 .assertMessageAbsenceNumber();
     }
 
     @Test
     @DisplayName("A message about the absence of a price")
-    @Tag("UI")
+    @Tag("ui")
     void notPrice() {
-        searchPage.openPageDrom();
+        searchPage.openPage();
         submitAnAdPage.openAnAd()
-                .setVIN(dataTestPage.vin())
+                .setVIN(dataTest.vin)
                 .submit()
-                .setMileage(dataTestPage.mileage())
-                .setNumber(dataTestPage.number())
+                .setMileage(dataTest.mileage)
+                .setNumber(dataTest.number)
                 .clickSubmit()
                 .assertMessageAbsencePrice();
     }

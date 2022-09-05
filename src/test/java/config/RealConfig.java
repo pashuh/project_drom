@@ -2,9 +2,7 @@ package config;
 
 import org.aeonbits.owner.Config;
 
-@Config.Sources({
-        "classpath:realDevice.properties"
-})
+@Config.Sources({"classpath:config/realDevice.properties"})
 public interface RealConfig extends Config {
 
     @Key("platformName")

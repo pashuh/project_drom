@@ -4,28 +4,26 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
+@DisplayName("Search tests")
 public class SearchTests extends TestBase {
 
     @Test
-    @DisplayName("Search for BMW brand cars by an authorized User")
-    @Tag("UI")
+    @DisplayName("Search for BMW brand cars")
+    @Tag("ui")
     public void searchBMWTestUI() {
-        auth.openPageDrom()
-                .authUI()
-                .assertAuthUI();
-        searchPage.openSearchForAds()
+        searchPage.openPage()
+                .openSearchForAds()
                 .setBrand("BMW")
                 .clickShow()
                 .assertSearchBrand("BMW");
     }
+
     @Test
-    @DisplayName("Search by amount by Authorized User")
-    @Tag("UI")
+    @DisplayName("Search by amount")
+    @Tag("ui")
     public void searchByAmountTestUI() {
-        auth.openPageDrom()
-                .authUI()
-                .assertAuthUI();
-        searchPage.openSearchForAds()
+        searchPage.openPage()
+                .openSearchForAds()
                 .setAmount("1000000")
                 .clickShow()
                 .assertAmount("1 000 000");
@@ -33,9 +31,9 @@ public class SearchTests extends TestBase {
 
     @Test
     @DisplayName("Search for cars with automatic transmission and brand")
-    @Tag("UI")
+    @Tag("ui")
     public void searchCarsWithAutomaticTransmission() {
-        searchPage.openPageDrom()
+        searchPage.openPage()
                 .openSearchForAds()
                 .setTransmission("АКПП")
                 .setBrand("AUDI")

@@ -1,17 +1,21 @@
 package tests.Mobile;
 
 import com.codeborne.selenide.Condition;
+import config.DataUserConfig;
 import io.appium.java_client.AppiumBy;
+import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import pages.DataTestPage;
+import tests.DataTest;
 
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
-public class AndroidSearchTests extends TestBaseForMobile {
-    DataTestPage dataTestPage = new DataTestPage();
+public class AndroidSearchTests extends TestBaseMobile {
+    DataTest dataTest = new DataTest();
+    DataUserConfig config = ConfigFactory.create(DataUserConfig.class, System.getProperties());
+
 
     @Test
     @DisplayName("Checking user authorization")
@@ -22,10 +26,10 @@ public class AndroidSearchTests extends TestBaseForMobile {
             $(AppiumBy.id("sign")).shouldHave(Condition.text("Телефон"));
         });
         step("Set login", () -> {
-            $(AppiumBy.id("sign")).setValue(dataTestPage.login());
+            $(AppiumBy.id("sign")).setValue(config.login());
         });
         step("Set password", () -> {
-            $(AppiumBy.id("password")).setValue(dataTestPage.password());
+            $(AppiumBy.id("password")).setValue(config.password());
         });
         step("Click open", () -> {
             $(AppiumBy.id("signbutton")).click();

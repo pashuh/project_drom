@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.$$;
 
 public class FavouritesPage {
     @Step("Add car in favourites")
-    public FavouritesPage addFavorites(){
+    public FavouritesPage addFavorites() {
         $$(".css-19crd92.e162wx9x0").findBy(Condition.text("Добавить в избранное")).click();
         return this;
     }
@@ -20,9 +20,8 @@ public class FavouritesPage {
     }
 
     @Step("Open favorites")
-    public FavouritesPage openFavorites(){
+    public FavouritesPage openFavorites() {
         $("[data-ftid='component_notification_type_success']").$("[title='Перейти в раздел «Мое избранное»']").click();
-//        $(".css-18895su.e5173en1").click();
         return this;
     }
 
@@ -32,9 +31,9 @@ public class FavouritesPage {
         return this;
     }
 
-    @Step("Checking the removal of the ad")
-    public FavouritesPage chekingRemoval() {
-        $(".drom-notouch").shouldNotHave(Condition.text("AUDI"));
-        return this;
-    }
+//    @Step("Checking the removal of the ad")
+//    public FavouritesPage chekingRemoval(String brand) {
+//        $(".drom-notouch").shouldNotHave(Condition.text(brand));
+//        return this;
+//    }
 }

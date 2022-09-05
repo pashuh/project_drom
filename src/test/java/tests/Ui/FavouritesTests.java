@@ -4,14 +4,15 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
+@DisplayName("Favourites tests")
 public class FavouritesTests extends TestBase {
 
 
     @Test
     @DisplayName("Adding cars to favorites")
-    @Tag("UI")
+    @Tag("ui")
     void addInFavorites() {
-        searchPage.openPageDrom()
+        searchPage.openPage()
                 .openSearchForAds()
                 .setBrand("AUDI")
                 .clickShow()
@@ -22,9 +23,9 @@ public class FavouritesTests extends TestBase {
 
     @Test
     @DisplayName("Deleting an ad from favorites")
-    @Tag("UI")
+    @Tag("ui")
     void deletingAdFromFavorites() {
-        searchPage.openPageDrom()
+        searchPage.openPage()
                 .openSearchForAds()
                 .setBrand("AUDI")
                 .clickShow()

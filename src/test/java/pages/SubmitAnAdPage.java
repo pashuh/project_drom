@@ -4,7 +4,6 @@ import com.codeborne.selenide.Condition;
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$$;
 
 public class SubmitAnAdPage {
     @Step("Open an ad")
@@ -12,6 +11,7 @@ public class SubmitAnAdPage {
         $("[data-ftid='component_header_add-bull']").click();
         return this;
     }
+
     @Step("Set VIN")
     public SubmitAnAdPage setVIN(String vin) {
         $("[placeholder='Введите VIN/номер кузова']").setValue(vin);
@@ -29,12 +29,14 @@ public class SubmitAnAdPage {
         $("[data-ftid='add_form_mileage']").setValue(mileage);
         return this;
     }
+
     @Step("Set price")
     public SubmitAnAdPage setPrice(Integer price) {
         $("[data-ftid='add_form_price']").setValue(String.valueOf(price));
         return this;
     }
-    @Step ("Click submit")
+
+    @Step("Click submit")
     public SubmitAnAdPage clickSubmit() {
         $("[type='submit']").click();
         return this;
@@ -45,6 +47,7 @@ public class SubmitAnAdPage {
         $("#phone1 [aria-invalid='true']").isDisplayed();
         return this;
     }
+
     @Step("Set number")
     public SubmitAnAdPage setNumber(String number) {
         $("#phone1").setValue(number);
@@ -56,5 +59,4 @@ public class SubmitAnAdPage {
         $("[data-ftid='error_message']").shouldHave(Condition.text("Не указана цена"));
         return this;
     }
-
 }

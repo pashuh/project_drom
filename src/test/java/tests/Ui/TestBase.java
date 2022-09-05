@@ -1,6 +1,7 @@
 package tests.Ui;
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 
 import config.CredentialsConfig;
@@ -12,14 +13,14 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import pages.*;
-
+import tests.DataTest;
 
 
 public class TestBase {
     static CredentialsConfig config = ConfigFactory.create(CredentialsConfig.class);
-    AuthPage auth = new AuthPage();
+    Auth auth = new Auth();
     CatalogPage catalogPage = new CatalogPage();
-    DataTestPage dataTestPage = new DataTestPage();
+    DataTest dataTest = new DataTest();
     SearchPage searchPage = new SearchPage();
     FavouritesPage favouritesPage = new FavouritesPage();
     SubmitAnAdPage submitAnAdPage = new SubmitAnAdPage();
@@ -36,7 +37,6 @@ public class TestBase {
         Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
-        Configuration.holdBrowserOpen = true;
 
         String remoteDriverUrl = System.getProperty("remoteDriverUrl", "selenoid.autotests.cloud/wd/hub");
         Configuration.remote = String.format("https://%s:%s@%s", config.login(), config.password(), remoteDriverUrl);
@@ -52,6 +52,7 @@ public class TestBase {
         Attach.screenshotAs("Last screenshot");
         Attach.pageSource();
         Attach.browserConsoleLogs();
-        Attach.getVideoUrl();
+        Attach.addVideo();
+        Selenide.closeWebDriver();
     }
 }

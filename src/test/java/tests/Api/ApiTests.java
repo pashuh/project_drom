@@ -18,7 +18,7 @@ public class ApiTests{
     }
 
     @Test
-    @Tag("API")
+    @Tag("api")
     @DisplayName("Search for a car with parameters: mitsubishi, outlander, АКПП")
     void searchForParamTestApi() {
         String response = given()
@@ -35,13 +35,13 @@ public class ApiTests{
     }
 
     @Test
-    @Tag("API")
+    @Tag("api")
     @DisplayName("Search for a Ford car with front-wheel drive")
     void searchFordTestApi() {
         String response = given()
                 .spec(searchFordRequestSpec)
                 .when()
-                .get("https://auto.drom.ru/ford/all/")
+                .get("ford/all/")
                 .then()
                 .spec(getSearchFordResponseSpec)
                 .extract()
@@ -51,13 +51,13 @@ public class ApiTests{
     }
 
     @Test
-    @Tag("API")
+    @Tag("api")
     @DisplayName("The absence of a car with automatic transmission when searching for a car on a manual transmission")
     void automaticTransmissionTestApi() {
         String response = given()
                 .spec(automaticTransmissionRequestSpec)
                 .when()
-                .get("https://auto.drom.ru/all/")
+                .get("all/")
                 .then()
                 .spec(getautomaticTransmissionResponseSpec)
                 .extract()
@@ -67,30 +67,29 @@ public class ApiTests{
     }
 
     @Test
-    @Tag("API")
-    @DisplayName("The 'Favorite Ads' section is empty when opened by an unauthorized user")
+    @Tag("api")
+    @DisplayName("Error when opening 'Favorite Ads' by an unauthorized user")
     void favoriteTestApi() {
         String response = given()
                 .spec(favoriteRequestSpec)
                 .when()
-                .get("https://my.drom.ru/personal/bookmark")
+                .get("/personal/bookmark")
                 .then()
                 .spec(getFavoriteResponseSpec)
                 .extract()
                 .body().asString();
         System.out.println("result" + response);
-        assertTrue(response.contains("Избранные объявления"));
-        assertTrue(response.contains("Вы ничего не добавили в избранное"));
+        assertTrue(response.contains("Запрошенная вами страница не существует!"));
     }
 
     @Test
-    @Tag("API")
+    @Tag("api")
     @DisplayName("Availability in the Section 'Catalog' Opel brands")
     void catalogTestApi() {
         String response = given()
                 .spec(catalogRequestSpec)
                 .when()
-                .get("https://www.drom.ru/catalog")
+                .get("https://drom.ru/catalog/")
                 .then()
                 .spec(getCatalogResponseSpec)
                 .extract()

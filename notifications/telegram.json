@@ -1,8 +1,8 @@
 {
   "base": {
-    "project": "testSberTech",
+    "project": "DromAuto",
     "environment": "preProd",
-    "comment": "Tag:'job_search' + 'viewing_commands' + 'viewing_programs' + 'application'",
+    "comment": "Tag:'ui' + 'api' + 'mobile' + 'uiAndapi'",
     "reportLink": "",
     "language": "en",
     "messenger": "telegram",

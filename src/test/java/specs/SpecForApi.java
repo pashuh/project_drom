@@ -42,15 +42,17 @@ public class SpecForApi {
             .log(LogDetail.BODY)
             .log(LogDetail.STATUS)
             .build();
-public static RequestSpecification favoriteRequestSpec = with()
+
+    public static RequestSpecification favoriteRequestSpec = with()
             .log().body()
             .log().all()
             .accept("text/html");
     public static ResponseSpecification getFavoriteResponseSpec = new ResponseSpecBuilder()
-            .expectStatusCode(200)
+            .expectStatusCode(404)
             .log(LogDetail.BODY)
             .log(LogDetail.STATUS)
             .build();
+
     public static RequestSpecification catalogRequestSpec = with()
             .log().body()
             .log().all()
