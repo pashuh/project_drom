@@ -10,6 +10,7 @@ import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.*;
 import static specs.SpecForApi.*;
 
+@DisplayName("Api tests")
 public class ApiTests{
 
     @BeforeAll
