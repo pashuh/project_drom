@@ -56,7 +56,7 @@
 >
 >*<code><strong>*Allure Report, Allure TestOps, Jira, Telegram Bot*</strong></code> используются для визуализации результатов тестирования.*
 >
->*Для запуска мобильных тестов используется <code><strong>*Android studio*</strong></code> и *<code><strong>*Browserstack*</strong></code>.*
+>*Для запуска мобильных тестов используется <code><strong>*Android studio*</strong></code> и <code><strong>*Browserstack*</strong></code>.*
 
 
 
