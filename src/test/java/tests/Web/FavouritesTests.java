@@ -1,4 +1,4 @@
-package tests.Ui;
+package tests.Web;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;

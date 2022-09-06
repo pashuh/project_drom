@@ -1,4 +1,4 @@
-package tests.Ui;
+package tests.Web;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
@@ -17,6 +17,7 @@ import tests.DataTest;
 
 
 public class TestBase {
+    static String host = System.getProperty("host", "remote");
     static CredentialsConfig config = ConfigFactory.create(CredentialsConfig.class);
     Auth auth = new Auth();
     CatalogPage catalogPage = new CatalogPage();
@@ -33,13 +34,15 @@ public class TestBase {
         Configuration.browserCapabilities = capabilities;
         Configuration.baseUrl = config.baseUrl();
         Configuration.browser = System.getProperty("browser", "chrome");
-        Configuration.browserVersion = System.getProperty("version", "100");
+        Configuration.browserVersion = System.getProperty("browserVersion", "100");
         Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
 
-        String remoteDriverUrl = System.getProperty("remoteDriverUrl", "selenoid.autotests.cloud/wd/hub");
-        Configuration.remote = String.format("https://%s:%s@%s", config.login(), config.password(), remoteDriverUrl);
+        if (host.equals("remote")) {
+            String remoteDriverUrl = System.getProperty("remoteDriverUrl", config.remoteUrl());
+            Configuration.remote = String.format(remoteDriverUrl);
+        }
 
     }
     @BeforeEach

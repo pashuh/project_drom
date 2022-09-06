@@ -1,4 +1,4 @@
-# ƒипломный проект по автоматизации тестировани€ сайта и мобильного приложени€ ƒром
+# ƒипломный проект по автоматизации тестировани€ сайта и мобильного приложени€ Drom.ru
 
 <img width="100%" title="Drom.ru" src="images/logo/drom.jpg">
 
@@ -44,7 +44,7 @@
 <img width="5%" title="RestAssured" src="images/logo/RestAssured.svg">
 </p>
 
-> *¬ данном проекте автотесты написаны на <code><strong>*Java*</strong></code> с использованием фреймворка <code><strong>*Selenide*</strong></code> дл€ UI-тестов.*
+> *¬ данном проекте автотесты написаны на <code><strong>*Java*</strong></code> с использованием фреймворка <code><strong>*Selenide*</strong></code> дл€ UI-тестов и <code><strong>*RestAssured*</strong></code> дл€ Api-тестов.*
 >
 >*ƒл€ сборки проекта используетс€ <code><strong>*Gradle*</strong></code>.*
 >
@@ -56,9 +56,8 @@
 >
 >*<code><strong>*Allure Report, Allure TestOps, Jira, Telegram Bot*</strong></code> используютс€ дл€ визуализации результатов тестировани€.*
 >
->ƒл€ запуска мобильных тестов используетс€ *<code><strong>*Android studio*</strong></code> и *<code><strong>*Browserstack*</strong></code>.*
->
->*<code><strong>*RestAssured*</strong></code> используетс€ как фреймворк дл€ тестировани€ REST API.*
+>*ƒл€ запуска мобильных тестов используетс€ <code><strong>*Android studio*</strong></code> и *<code><strong>*Browserstack*</strong></code>.*
+
 
 
 ## :bookmark_tabs: –еализованы проверки
@@ -96,32 +95,35 @@
 ### Ћокальный запуск тестов
 
 ```bash
-gradle clean testInnoTech
+gradle clean web -Dhost=local - ui тесты
+gradle clean api -Dhost=local - api тесты
+gradle clean mobile -DdeviceHost=realDevice - тесты мобильного приложени€ на физическом девайсе
+gradle clean mobile -DdeviceHost=local - тесты мобильного приложени€ в эмул€торе AndroidStudio
+gradle clean webAndApi -Dhost=local - ui + api тесты
+
+(host=remote по умолчанию)
+(deviceHost=browserstack по умолчанию)
 ```
 
 ### ”даленный запуск тестов
 
 ```bash
-gradle
-clean
-testInnoTech
--Dremote=${ADDRESS}
--Dbrowser=${BROWSER}
--Dversion=${BROWSER_VERSION}
--Dresolution=${BROWSER_SIZE}
+gradle clean web -Dhost=remote - ui тесты
+gradle clean api -Dhost=remote - api тесты
+gradle clean mobile -DdeviceHost=browserstack - тесты мобильного приложени€ на сервере Browserstack
+gradle clean webAndApi -Dhost=remote - ui + api тесты
 ```
 
 ### ѕараметры сборки
 
-> <code>ADDRESS</code> Ц адрес удаленного сервера, на котором будут запускатьс€ тесты.
 >
-> <code>BROWSER</code> Ц браузер, в котором будут выполн€тьс€ тесты (_по умолчанию - <code>chrome</code>_).
+> <code>browser</code> Ц браузер, в котором будут выполн€тьс€ тесты (_по умолчанию - <code>chrome</code>_).
 >
-> <code>BROWSER_VERSION</code> Ц верси€ браузера, в которой будут выполн€тьс€ тесты (_по умолчанию - <code>100</code>_).
+> <code>browserVersion</code> Ц верси€ браузера, в которой будут выполн€тьс€ тесты (_по умолчанию - <code>100</code>_).
 >
-> <code>BROWSER_SIZE</code> Ц размер окна браузера, в котором будут выполн€тьс€ тесты (_по умолчанию - <code>1920x1080</code>_).
+> <code>browserSize</code> Ц размер окна браузера, в котором будут выполн€тьс€ тесты (_по умолчанию - <code>1920x1080</code>_).
 
-## <img width="4%" title="Jenkins" src="images/logo/Jenkins.svg"> «апуск тестов в [Jenkins](https://jenkins.autotests.cloud/job/demonstration_tests_inno.tech/)
+## <img width="4%" title="Jenkins" src="images/logo/Jenkins.svg"> «апуск тестов в [Jenkins](https://jenkins.autotests.cloud/job/project_drom/)
 
 *ƒл€ запуска сборки необходимо указать значени€ параметров и нажать кнопку <code><strong>*—обрать*</strong></code>.*
 

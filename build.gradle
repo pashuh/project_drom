@@ -49,23 +49,27 @@ dependencies {
 }
 
 task api(type: Test) {
+    systemProperties(System.getProperties())
     useJUnitPlatform {
         includeTags "api"
     }
 }
 
 task mobile(type: Test) {
+    systemProperties(System.getProperties())
     useJUnitPlatform {
         includeTags "mobile"
     }
 }
 
-task ui(type: Test) {
+task web(type: Test) {
+    systemProperties(System.getProperties())
     useJUnitPlatform {
         includeTags "ui"
     }
 }
-task uiAndapi(type: Test) {
+task webAndApi(type: Test) {
+    systemProperties(System.getProperties())
     useJUnitPlatform {
         includeTags "ui"
         includeTags "api"
@@ -73,5 +77,6 @@ task uiAndapi(type: Test) {
 }
 
 test {
+    systemProperties(System.getProperties())
     useJUnitPlatform()
 }
