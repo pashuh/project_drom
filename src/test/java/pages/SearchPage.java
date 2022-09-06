@@ -61,7 +61,7 @@ public class SearchPage {
 
     @Step("Assert transmission")
     public SearchPage assertTransmossion(String transmission) {
-        $$("[data-ftid='component_inline-bull-description']").contains(transmission);
+        $$("[data-ftid='component_inline-bull-description']").shouldHave(CollectionCondition.texts(transmission));
         return this;
     }
 

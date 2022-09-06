@@ -22,7 +22,7 @@ public class CatalogPage {
 
     @Step("Checking the availability of the Q8 model")
     public CatalogPage assertAvailabilityModel(String model) {
-        $$("[data-ftid='component_cars-list']").findBy(Condition.text(model))
+        $$("[data-ftid='component_cars-listSSSSS']").findBy(Condition.text(model))
                 .isDisplayed();
         return this;
     }
