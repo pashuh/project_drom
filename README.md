@@ -40,7 +40,7 @@
 <img width="5%" title="Jira" src="images/logo/Jira.svg">
 <img width="5%" title="Telegram" src="images/logo/Telegram.svg">
 <img width="5%" title="Android studio" src="images/logo/android-studio-1.svg">
-<img width="5%" title="Browserstack" src="images/logo/Browserstack.svg">
+<img width="7%" title="Browserstack" src="images/logo/Browserstack.svg">
 <img width="5%" title="RestAssured" src="images/logo/RestAssured.svg">
 </p>
 
