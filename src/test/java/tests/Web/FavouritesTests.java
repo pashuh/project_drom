@@ -4,12 +4,12 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-@DisplayName("Favourites tests")
+@DisplayName("Тесты для проверки раздела 'Избранное'")
 public class FavouritesTests extends TestBase {
 
 
     @Test
-    @DisplayName("Adding cars to favorites")
+    @DisplayName("Проверка возможности добавления объявления в избранное")
     @Tag("ui")
     void addInFavorites() {
         searchPage.openPage()
@@ -22,7 +22,7 @@ public class FavouritesTests extends TestBase {
     }
 
     @Test
-    @DisplayName("Deleting an ad from favorites")
+    @DisplayName("Проверка возможности удаления объявления из избранного")
     @Tag("ui")
     void deletingAdFromFavorites() {
         searchPage.openPage()

@@ -4,12 +4,12 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-@DisplayName("Catalog tests")
+@DisplayName("Раздел 'Каталог'")
 public class CatalogTests extends TestBase {
 
 
     @Test
-    @DisplayName("Availability of the Q8 model in the AUDI catalog")
+    @DisplayName("Проверка наличия выбранной модели в определенном каталоге")
     @Tag("ui")
     void checkQ8InCatalog() {
         catalogPage.openCatalog()
@@ -18,7 +18,7 @@ public class CatalogTests extends TestBase {
     }
 
     @Test
-    @DisplayName("Availability of reviews for KIA K5")
+    @DisplayName("Проверка наличия отзывов для выбранной марки и модели авто в каталоге")
     @Tag("ui")
     void checkReviewsForKiaK5() {
         catalogPage.openCatalog()

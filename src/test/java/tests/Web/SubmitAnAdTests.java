@@ -4,11 +4,11 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-@DisplayName("Submit an ad tests")
+@DisplayName("Публикация объявления")
 public class SubmitAnAdTests extends TestBase {
 
     @Test
-    @DisplayName("A message about the absence of a number")
+    @DisplayName("Проверка сообщения об отсутствии номера при заполнении объявления")
     @Tag("ui")
     void notMobile() {
         searchPage.openPage();
@@ -22,7 +22,7 @@ public class SubmitAnAdTests extends TestBase {
     }
 
     @Test
-    @DisplayName("A message about the absence of a price")
+    @DisplayName("Проверка сообщения об отсутствии стоимости при заполнении объявления")
     @Tag("ui")
     void notPrice() {
         searchPage.openPage();

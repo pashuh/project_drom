@@ -12,13 +12,13 @@ import tests.DataTest;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
+@DisplayName("Мобильные тесты")
 public class AndroidSearchTests extends TestBaseMobile {
-    DataTest dataTest = new DataTest();
     DataUserConfig config = ConfigFactory.create(DataUserConfig.class, System.getProperties());
 
 
     @Test
-    @DisplayName("Checking user authorization")
+    @DisplayName("Проверка авторизации")
     @Tag("mobile")
     void authTestMob() {
         step("Click login and registration", () -> {
@@ -42,7 +42,7 @@ public class AndroidSearchTests extends TestBaseMobile {
         });
     }
 
-    @DisplayName("Checking the car search by brand")
+    @DisplayName("Проверка поиска авто по выбранному бренду")
     @Test
     @Tag("mobile")
     void searchTestMob() {
@@ -63,7 +63,7 @@ public class AndroidSearchTests extends TestBaseMobile {
         });
     }
 
-    @DisplayName("Add auto to favorites")
+    @DisplayName("Проверка возможности добавления авто в раздел 'Избранное'")
     @Test
     @Tag("mobile")
     void addAutoToFavoritesTestMob() {

@@ -4,11 +4,11 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-@DisplayName("Search tests")
+@DisplayName("Поиск объявлений")
 public class SearchTests extends TestBase {
 
     @Test
-    @DisplayName("Search for BMW brand cars")
+    @DisplayName("Проверка поиска авто по бренду")
     @Tag("ui")
     public void searchBMWTestUI() {
         searchPage.openPage()
@@ -19,7 +19,7 @@ public class SearchTests extends TestBase {
     }
 
     @Test
-    @DisplayName("Search by amount")
+    @DisplayName("Проверка поиска авто по стоимости")
     @Tag("ui")
     public void searchByAmountTestUI() {
         searchPage.openPage()
@@ -30,7 +30,7 @@ public class SearchTests extends TestBase {
     }
 
     @Test
-    @DisplayName("Search for cars with automatic transmission and brand")
+    @DisplayName("Проверка поиска авто по параметрам: бренд, автоматическая трансмиссия")
     @Tag("ui")
     public void searchCarsWithAutomaticTransmission() {
         searchPage.openPage()

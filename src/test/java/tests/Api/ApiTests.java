@@ -10,7 +10,7 @@ import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.*;
 import static specs.SpecForApi.*;
 
-@DisplayName("Api tests")
+@DisplayName("Api тесты")
 public class ApiTests{
 
     @BeforeAll
@@ -20,7 +20,7 @@ public class ApiTests{
 
     @Test
     @Tag("api")
-    @DisplayName("Search for a car with parameters: mitsubishi, outlander, АКПП")
+    @DisplayName("Проверка поиска авто по параметрам: бренд, модель, тип КПП")
     void searchForParamTestApi() {
         String response = given()
                 .spec(searchFroParamRequestSpec)
@@ -37,7 +37,7 @@ public class ApiTests{
 
     @Test
     @Tag("api")
-    @DisplayName("Search for a Ford car with front-wheel drive")
+    @DisplayName("Проверка поиска авто по параметрам: бренд, привод")
     void searchFordTestApi() {
         String response = given()
                 .spec(searchFordRequestSpec)
@@ -53,7 +53,7 @@ public class ApiTests{
 
     @Test
     @Tag("api")
-    @DisplayName("The absence of a car with automatic transmission when searching for a car on a manual transmission")
+    @DisplayName("Проверка отсутствия объявлений с параметрами, отличными от заданных, при поиске")
     void automaticTransmissionTestApi() {
         String response = given()
                 .spec(automaticTransmissionRequestSpec)
@@ -69,7 +69,7 @@ public class ApiTests{
 
     @Test
     @Tag("api")
-    @DisplayName("Error when opening 'Favorite Ads' by an unauthorized user")
+    @DisplayName("Проверка отсутствия раздела 'Избранное' при открытии неавторизованным пользователем")
     void favoriteTestApi() {
         String response = given()
                 .spec(favoriteRequestSpec)
@@ -85,7 +85,7 @@ public class ApiTests{
 
     @Test
     @Tag("api")
-    @DisplayName("Availability in the Section 'Catalog' Opel brands")
+    @DisplayName("Проверка наличия выбранного бренда в разделе 'Каталог'")
     void catalogTestApi() {
         String response = given()
                 .spec(catalogRequestSpec)
