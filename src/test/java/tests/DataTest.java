@@ -16,5 +16,5 @@ public class DataTest {
 
     public static String brand = "Audi";
 
-    public static String model = "Q8adasd";
+    public static String model = "adasd";
 }

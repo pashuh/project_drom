@@ -39,6 +39,6 @@ public class SearchTests extends TestBase {
                 .setBrand("AUDI")
                 .clickShow()
                 .assertSearchBrand("AUDI")
-                .assertTransmossion("АКППasdasd");
+                .assertTransmossion("asdasd");
     }
 }
