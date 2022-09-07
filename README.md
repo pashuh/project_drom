@@ -139,7 +139,7 @@ Report*</strong></code>, кликнув по которому, откроется страница с сформированны
   <img src="images/screens/Jenkins2.png" alt="job" width="1000">
 </p>
 
-## <img width="4%" title="Allure Report" src="images/logo/Allure.svg"> Отчет о результатах тестирования в [Allure Report](https://jenkins.autotests.cloud/job/demonstration_tests_inno.tech/)
+## <img width="4%" title="Allure Report" src="images/logo/Allure.svg"> Отчет о результатах тестирования в [Allure Report](https://jenkins.autotests.cloud/job/project_drom/9/allure/)
 
 ### :pushpin: Общая информация
 
@@ -162,7 +162,7 @@ Report*</strong></code>, кликнув по которому, откроется страница с сформированны
   <img src="images/screens/AllureReport2.png" alt="Allure Report" width="900">
 </p>
 
-## <img width="4%" title="Allure TestOPS" src="images/logo/Allure_TO.svg"> Интеграция с [Allure TestOps](https://allure.autotests.cloud/launch/14329)
+## <img width="4%" title="Allure TestOPS" src="images/logo/Allure_TO.svg"> Интеграция с [Allure TestOps](https://allure.autotests.cloud/launch/15585)
 
 ### :pushpin: Основной дашборд
 
@@ -176,7 +176,7 @@ Report*</strong></code>, кликнув по которому, откроется страница с сформированны
   <img src="images/screens/AllureTestOps2.png" alt="test cases" width="900">
 </p>
 
-## <img width="4%" title="Jira" src="images/logo/Jira.svg"> Интеграция с [Jira](https://jira.autotests.cloud/browse/AUTO-1226)
+## <img width="4%" title="Jira" src="images/logo/Jira.svg"> Интеграция с [Jira](https://jira.autotests.cloud/browse/AUTO-1349)
 
 <p align="center">
   <img src="images/screens/Jira.png" alt="jira" width="1000">
