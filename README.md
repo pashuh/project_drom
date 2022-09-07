@@ -188,7 +188,7 @@ Report*</strong></code>, кликнув по которому, откроетс€ страница с сформированны
 > ѕосле завершени€ сборки специальный бот, созданный в <code>Telegram</code>, автоматически обрабатывает и отправл€ет сообщение с отчетом о прогоне тестов.
 
 <p align="center">
-<img title="Telegram Notifications" src="images/screens/Telegram2.png">
+<img title="Telegram Notifications" src="images/screens/Telegram.png">
 </p>
 
 ## <img width="4%" title="Selenoid" src="images/logo/Selenoid.svg"> ѕример запуска теста в Selenoid
