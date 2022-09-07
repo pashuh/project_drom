@@ -1,9 +1,5 @@
 package tests;
 
-import config.DataUserConfig;
-import config.RealConfig;
-import org.aeonbits.owner.ConfigFactory;
-
 public class DataTest {
 
     public static String vin = "2D4GP44L25R485912";

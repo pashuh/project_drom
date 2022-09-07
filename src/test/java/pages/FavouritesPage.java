@@ -30,10 +30,4 @@ public class FavouritesPage {
         $(".removeBookmark").click();
         return this;
     }
-
-//    @Step("Checking the removal of the ad")
-//    public FavouritesPage chekingRemoval(String brand) {
-//        $(".drom-notouch").shouldNotHave(Condition.text(brand));
-//        return this;
-//    }
 }

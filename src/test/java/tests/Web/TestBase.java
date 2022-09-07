@@ -27,7 +27,6 @@ public class TestBase {
     SubmitAnAdPage submitAnAdPage = new SubmitAnAdPage();
 
 
-
     @BeforeAll
     static void beForAll() {
         DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -43,8 +42,8 @@ public class TestBase {
             String remoteDriverUrl = System.getProperty("remoteDriverUrl", config.remoteUrl());
             Configuration.remote = String.format(remoteDriverUrl);
         }
-
     }
+
     @BeforeEach
     public void beforeEach() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());

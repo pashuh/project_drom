@@ -12,6 +12,4 @@ public interface LocalConfig extends Config {
 
     @Key("osVersionEm")
     String osVersionEm();
-
-    String password();
 }
